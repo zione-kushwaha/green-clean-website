@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* CSS Variables */
+:root {
+    --navbar-height: 59px;
+}
+
+/* Services Section */
+#services-container {
+    background-image: url('http: //127.0.0.1:8000/static/images/vecteezy_green-earth-day-on-isolated-white-background-care-for-the_24472833.jpg');
+}
+
+#services {
+    margin: 34px;
+    display: flex;
+}
+
+#services .box {
+    border: 2px solid brown;
+    padding: 34px;
+    margin: 2px 55px;
+    border-radius: 28px;
+    background: black;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+#services .box img {
+    height: 160px;
+    margin: auto;
+    display: block;
+}
+
+#services .box p {
+    font-family: 'Bree Serif', serif;
+    color: white;
+
+}
+
+
+
+/* Utility Classes */
+.h-primary {
+    font-family: 'Bree Serif', serif;
+    font-size: 3.8rem;
+    padding: 12px;
+    color: blue;
+}
+
+.h-secondary {
+    font-family: 'Bree Serif', serif;
+    font-size: 2.3rem;
+    padding: 12px;
+    color: aquamarine;
+}
+
+
+
+.center {
+    text-align: center;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    #services .box {
+        width: calc(50% - 20px);
+        /* Make boxes 50% width on screens up to 768px */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #services .box {
+        width: calc(100% - 20px);
+        /* Make boxes full-width on screens up to 480px */
+        margin: 0 auto;
+        /* Center the boxes */
+    }
+
+    #services {
+        margin: 10px;
+        /* Adjust margin for smaller screens */
+    }
+}

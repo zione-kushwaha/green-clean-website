@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-image: url('/static/images/contact_bg.jpg');
+
+        }
+
+        .container-service {
+            margin-top: 60px;
+        }
+
+        .container-donate {
+            border-radius: 4px;
+            height: 45vh;
+            background-color: rgba(87, 99, 84, 0.525);
+        }
+
+        .container-donate label {
+            color: azure;
+        }
+
+        .container-donate input {
+            color: azure;
+            background-color: black;
+            background-color: rgba(5, 5, 5, 0.333);
+
+        }
+
+        .container-donate input::placeholder {
+            color: rgb(141, 141, 141);
+        }
+    </style>
+
+
+</head>
+{% include "header.html" %}
+
+<body>
+    <div class="container container-service">
+
+
+
+        <!-- form  -->
+
+
+        <div class="container  container-donate  mt-5 ">
+
+            <h1 style="color: rgb(182, 239, 239);"><u>Donate To GreenClean </u></h1>
+
+            <form action="">
+
+                <label class="mt-2" for="name">Name</label>
+                <input class="form-control mb-4 text-white" type="Name" name="name" placeholder="Write your Name">
+
+                <label for="email">Email</label>
+                <input class="form-control mb-4 text-white" type="email" name="email" placeholder="Write your email">
+
+                <label for="address">Address</label>
+                <input class="form-control mb-4 text-white" type="text" name="address" placeholder="Write your Address">
+
+
+
+                <label for="amount">Expected Amount</label>
+                <input class="form-control mb-4 text-white" type="text" name="amount"
+                    placeholder="Enter Amount in Rupees ">
+
+
+                <button type="submit" class="btn btn-success mt-1" style="border: solid 1px rgb(206, 204, 204);"
+                    onclick="submitForm()">Submit</button>
+
+
+                <script>
+                    function submitForm() {
+                        // Disable the button to prevent multiple submissions
+                        document.getElementById("myForm").submit();
+                        document.getElementById("myForm").querySelector("button").disabled = true;
+                    }
+                </script>
+
+
+            </form>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    {% include "base.html" %}
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,46 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+.card{
+    background-color: rgba(0, 0, 0, 0.434);
+}
+.card-title
+{
+    color: ghostwhite;
+    text-decoration: underline;
+}
+
+.card-text
+{
+    color: rgb(163, 163, 163);
+}
+.container-awareness {
+    margin-top: 100px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+        body {
+
+            background-image: url('/static/images/postbg.jpeg');
+
+        }
+
+        .container-cus {
+            margin-top: 50px;
+            color: rgb(0, 0, 0);
+            /* background-color: rgba(31, 120, 9, 0.596); */
+
+            border-radius: 10px;
+            padding-bottom: 10px;
+            font-weight: 700;
+
+
+        }
+
+        .form-control {
+            border: none;
+
+        }
+    </style>
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+
+    <div class="container mt-4  container-cus">
+        <h3> <u>Create Your Awarenes</u> </h3>
+
+
+        <form action="{% url 'awareness' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input class="form-control mb-4 text-white" style="background-color:  rgba(15, 14, 14, 0.673)" type="Name"
+                name="name" placeholder="Write your Name">
+
+            <label for="title">Title</label>
+            <input class="form-control mb-4 text-white" style="background-color:  rgba(15, 14, 14, 0.673)" type="Name"
+                name="title" placeholder="Write your title of awareness">
+
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control text-white" style="background-color:  rgba(15, 14, 14, 0.673)"
+                    name="description" id="textarea" placeholder="Write your awareness..." rows="8"></textarea>
+
+            </div>
+
+            <label for="post_picture">Upload image </label> <br>
+            <input type="file" id="post_picture" name="post_picture" accept="image/*">
+
+            <button type="submit" class="btn btn-success mt-3" style="border: solid 1px rgb(206, 204, 204);"
+                onclick="submitForm()">Submit</button>
+
+
+            <script>
+                function submitForm() {
+                    // Disable the button to prevent multiple submissions
+                    document.getElementById("myForm").submit();
+                    document.getElementById("myForm").querySelector("button").disabled = true;
+                }
+            </script>
+
+
+        </form>
+
+
+    </div>
+
+
+
+
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

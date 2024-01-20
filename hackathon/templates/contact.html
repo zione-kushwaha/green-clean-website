@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-image: url('/static/images/contact_bg.jpg');
+            background-size: cover;
+            color: azure;
+        }
+
+        .container-contact {
+            /* border: 2px solid rgb(223, 51, 12); */
+            padding-top: 100px;
+            height: 55vh;
+        }
+
+
+        .contact {
+            background-color: rgba(12, 12, 12, 0.332);
+
+            border-radius: 4px;
+
+        }
+
+
+        .form-group {
+            padding: 4px;
+
+            border-radius: 4px;
+        }
+
+        .form-control {
+            background-color: rgba(24, 22, 22, 0.405);
+
+
+            color: azure;
+
+        }
+
+        .container-contact input::placeholder {
+            color: rgb(212, 211, 211);
+        }
+
+        .form-group label {
+            color: white;
+        }
+    </style>
+
+    <!-- <link rel="stylesheet" href="contact.css"> -->
+    <title>GreenClean</title>
+</head>
+
+<body>
+
+
+    <!-- nab bar  -->
+
+
+
+
+    <!-- contact <section></section> -->
+
+
+
+    <div class="container mt-2 container-contact ">
+        <div>
+            <h2 style="color: rgb(185, 235, 235);"><u>Get Touch With Us</u> </h2>
+        </div>
+        <form class="contact" action="{% url 'home' %}" id="myForm" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input name="name" type="Name" class="form-control form-control-lg "
+                    style="background-color:  rgba(24, 22, 22, 0.405)" id="exampleFormControlInput1"
+                    placeholder="Type Your Name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input name="email" type="email" class="form-control form-control-lg "
+                    style="background-color:  rgba(24, 22, 22, 0.405)" id="exampleFormControlInput1"
+                    placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+                <label for="number">Phone Number</label>
+                <input name="phone" type="text" class="form-control form-control-lg  "
+                    style="background-color:  rgba(24, 22, 22, 0.405)" id="exampleFormControlInput1"
+                    placeholder="98XXXXXXXX" required>
+            </div>
+
+            <div class="form-group">
+                <label for="query">Query</label>
+                <textarea name="query" class="form-control form-control-lg" id="submit"
+                    style="background-color:  rgba(24, 22, 22, 0.405)" placeholder="what can we help with ?"
+                    rows="3"></textarea>
+            </div>
+
+
+
+
+            <!-- Your form fields go here -->
+            <button type="submit" class="btn btn-dark m-3" style="border: solid 1px rgb(206, 204, 204);"
+                onclick="submitForm()">Submit</button>
+
+
+            <script>
+                function submitForm() {
+                    // Disable the button to prevent multiple submissions
+                    document.getElementById("myForm").submit();
+                    document.getElementById("myForm").querySelector("button").disabled = true;
+                }
+            </script>
+
+        </form>
+
+
+
+    </div>
+
+
+    {% include "base.html" %}
+
+
+
+    <!-- footer section  -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        let not = 5;
+        const nof_no = document.getElementById("notff")
+        nof_no.innerHTML = not
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/base.css">
+
+</head>
+
+<body>
+    <!--!Navbar Starts Here  -->
+
+
+
+    <header class="container">
+        <div class="fas fa-bars" id="menu-bar"></div>
+
+
+
+        <a href="" class="logo"><img src="/static/images/logo-no-background.png" alt=""></a>
+
+
+        <nav class="navbar">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'awareness' %}">Awareness</a>
+
+
+            <a href="{% url 'service' %}">Donate</a>
+            <a href="{% url 'contact' %}">Contact Us</a>
+
+        </nav>
+
+
+        <div class="icons">
+            <i class="fas fa-search" id="search-btn"></i>
+            <i class="fas fa-user" id="login-btn"></i>
+        </div>
+
+        <form class="search-bar-container">
+            <input type="search" name="search" id="search-bar" placeholder="search">
+            <label for="search-bar" class="fas fa-search"></label>
+
+        </form>
+
+    </header>
+    <!-- !Navbar Ends -->
+
+
+
+
+
+    <!-- ? Login Form  -->
+    <div class="login-form-container">
+        <i class="fas fa-times" id="form-close"></i>
+
+
+
+
+        <form method="post">
+
+            {% csrf_token %}
+
+            <h3>login</h3>
+            {% if error %}
+            <style>
+                .red-bg {
+                    background-color: pink;
+                }
+            </style>
+
+            <div class="red-bg">
+                Please enter your email address or password
+            </div>
+
+
+
+            {% endif %}
+
+            <input type="text" name="email" placeholder="enter your email" class="box">
+            <input type="text" placeholder="enter your password" class="box">
+
+
+
+
+            <input type="submit" value="login now" class="btn">
+            <input type="checkbox" id="remember">
+            <label for="remember" id="remember">remember me</label>
+            <p>forget password <a href="#">click here</a></p>
+            <p>don't have account <a href="#">click here</a></p>
+        </form>
+    </div>
+    <script src="/static/script.js"></script>
+
+    <!-- ?Login Form End -->
